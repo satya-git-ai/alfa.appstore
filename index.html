@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alfa appStore - Freeware Trusted Android Apps</title>
+  
+  <!-- Inter & Plus Jakarta Sans Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', '"Inter"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#f0f7ff',
+              100: '#e0effe',
+              500: '#0284c7',
+              600: '#0369a1',
+              700: '#075985',
+              800: '#0c4a6e',
+              900: '#082f49',
+              accent: '#06b6d4',
+            }
+          },
+          animation: {
+            'float-slow': 'float 6s ease-in-out infinite',
+            'pulse-subtle': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-10px)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom glassy and mesh background effects */
+    .mesh-gradient {
+      background-color: #0b1120;
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(14, 165, 233, 0.15) 0px, transparent 50%),
+        radial-gradient(at 100% 0%, rgba(99, 102, 241, 0.15) 0px, transparent 50%),
+        radial-gradient(at 50% 100%, rgba(6, 182, 212, 0.12) 0px, transparent 50%);
+    }
+
+    .glass-card {
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .glass-card-hover {
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .glass-card-hover:hover {
+      transform: translateY(-4px);
+      border-color: rgba(56, 189, 248, 0.3);
+      box-shadow: 0 20px 35px -10px rgba(2, 132, 199, 0.25);
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-cyan-500 selection:text-white min-h-screen flex flex-col">
+
+  <!-- Top Banner / Notice -->
+  <aside aria-label="Privacy guarantee" class="bg-gradient-to-r from-sky-950 via-slate-900 to-indigo-950 border-b border-sky-800/30 text-xs py-2 px-4 text-center text-slate-300 font-medium">
+    <span class="inline-flex items-center gap-1.5">
+      <i data-lucide="shield-check" class="w-3.5 h-3.5 text-cyan-400"></i>
+      <span>Official Portal: 100% Free &amp; Open Independent APKs — Handcrafted with zero data collection.</span>
+    </span>
+  </aside>
+
+  <!-- Main Navigation Header -->
+  <header class="sticky top-0 z-50 backdrop-blur-xl bg-slate-950/85 border-b border-slate-800/80 transition-all duration-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Logo & Branding -->
+        <a href="#hero" class="flex items-center gap-3.5 group focus:outline-none focus:ring-2 focus:ring-sky-500 rounded-xl p-1">
+          <!-- Stylized Polygonal 'A' Arrow Insignia matching attached image -->
+          <div class="relative w-12 h-12 flex-shrink-0 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+            <svg viewBox="0 0 200 200" class="w-full h-full drop-shadow-[0_4px_12px_rgba(6,182,212,0.35)]" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="facetDeepBlue" x1="0%" y1="100%" x2="50%" y2="0%">
+                  <stop offset="0%" stop-color="#0b194d"/>
+                  <stop offset="60%" stop-color="#033d6b"/>
+                  <stop offset="100%" stop-color="#0284c7"/>
+                </linearGradient>
+                <linearGradient id="facetCyanTeal" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#06b6d4"/>
+                  <stop offset="70%" stop-color="#0f766e"/>
+                  <stop offset="100%" stop-color="#042f2e"/>
+                </linearGradient>
+                <linearGradient id="facetGreenLime" x1="0%" y1="100%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#10b981"/>
+                  <stop offset="60%" stop-color="#4ade80"/>
+                  <stop offset="100%" stop-color="#a3e635"/>
+                </linearGradient>
+                <linearGradient id="arrowSurge" x1="10%" y1="90%" x2="90%" y2="10%">
+                  <stop offset="0%" stop-color="#047857"/>
+                  <stop offset="35%" stop-color="#10b981"/>
+                  <stop offset="70%" stop-color="#84cc16"/>
+                  <stop offset="100%" stop-color="#bef264"/>
+                </linearGradient>
+                <linearGradient id="rightWingGrad" x1="100%" y1="100%" x2="40%" y2="20%">
+                  <stop offset="0%" stop-color="#0f2b48"/>
+                  <stop offset="50%" stop-color="#085f63"/>
+                  <stop offset="100%" stop-color="#0284c7"/>
+                </linearGradient>
+                <linearGradient id="badgeAppGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#38bdf8"/>
+                  <stop offset="100%" stop-color="#1e1b4b"/>
+                </linearGradient>
+                <linearGradient id="badgeRocketGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#818cf8"/>
+                  <stop offset="100%" stop-color="#312e81"/>
+                </linearGradient>
+                <linearGradient id="badgeStarGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#38bdf8"/>
+                  <stop offset="100%" stop-color="#1d4ed8"/>
+                </linearGradient>
+              </defs>
+
+              <!-- Left Polygonal Foot & Stem -->
+              <polygon points="18,166 68,166 84,130 38,130" fill="url(#facetDeepBlue)" />
+              <polygon points="38,130 84,130 100,30" fill="url(#facetCyanTeal)" opacity="0.95" />
+              <polygon points="84,130 100,90 100,30" fill="#0284c7" opacity="0.8" />
+
+              <!-- Center Apex & Facets -->
+              <polygon points="100,30 105,33 118,72 100,90" fill="#22c55e" opacity="0.9" />
+              <polygon points="100,30 114,48 100,90" fill="url(#facetGreenLime)" />
+
+              <!-- Right Polygonal Arm & Base Foot -->
+              <polygon points="118,166 142,166 128,126 112,126" fill="#093145" />
+              <polygon points="112,126 128,126 138,82" fill="url(#rightWingGrad)" />
+
+              <!-- Sweeping Dynamic Green-to-Lime Arrow through center -->
+              <path d="M52,142 C70,122 84,104 100,82 C114,64 126,50 138,40 L134,60 L146,42 L144,38 L124,54 L132,54 C120,66 108,80 94,100 C78,122 66,136 52,142 Z" fill="url(#arrowSurge)" />
+              <!-- Arrowhead Triangle -->
+              <polygon points="132,46 148,40 144,56" fill="#a3e635" />
+
+              <!-- Floating UI Badges & Applets -->
+              <!-- 'app' pill badge -->
+              <g transform="translate(30, 72)">
+                <rect width="24" height="18" rx="5" fill="url(#badgeAppGrad)" stroke="#38bdf8" stroke-width="1"/>
+                <text x="12" y="12.5" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5" font-weight="700" fill="#ffffff" text-anchor="middle">app</text>
+              </g>
+
+              <!-- Search Lens -->
+              <circle cx="68" cy="85" r="5" stroke="#67e8f9" stroke-width="1.6" fill="none"/>
+              <line x1="71.5" y1="88.5" x2="75" y2="92" stroke="#67e8f9" stroke-width="1.6" stroke-linecap="round"/>
+
+              <!-- Small Cyan Gear -->
+              <g transform="translate(60, 107)">
+                <circle cx="5" cy="5" r="3" fill="none" stroke="#38bdf8" stroke-width="1.2"/>
+                <circle cx="5" cy="5" r="1.2" fill="#38bdf8"/>
+                <line x1="5" y1="0.5" x2="5" y2="2" stroke="#38bdf8" stroke-width="1.2"/>
+                <line x1="5" y1="8" x2="5" y2="9.5" stroke="#38bdf8" stroke-width="1.2"/>
+                <line x1="0.5" y1="5" x2="2" y2="5" stroke="#38bdf8" stroke-width="1.2"/>
+                <line x1="8" y1="5" x2="9.5" y2="5" stroke="#38bdf8" stroke-width="1.2"/>
+              </g>
+
+              <!-- Mini Rocket Badge Top -->
+              <g transform="translate(112, 46)">
+                <rect width="18" height="16" rx="4" fill="url(#badgeRocketGrad)" stroke="#818cf8" stroke-width="0.8"/>
+                <!-- rocket silhouette -->
+                <path d="M9,4 C11,6 12,9 11,12 L9,10 L7,12 C6,9 7,6 9,4 Z" fill="#ffffff"/>
+              </g>
+
+              <!-- Star Rating Badge -->
+              <g transform="translate(130, 108)">
+                <rect width="20" height="18" rx="4" fill="url(#badgeStarGrad)" stroke="#60a5fa" stroke-width="0.8"/>
+                <!-- Star inside -->
+                <polygon points="10,4.5 11.5,7.8 15,8.2 12.5,10.6 13.2,14 10,12.2 6.8,14 7.5,10.6 5,8.2 8.5,7.8" fill="#fde047"/>
+              </g>
+
+              <!-- Mini Document Vault Icon -->
+              <g transform="translate(126, 134)">
+                <rect x="0" y="0" width="12" height="14" rx="2" fill="#0284c7" opacity="0.9"/>
+                <line x1="2.5" y1="4" x2="9.5" y2="4" stroke="#e0f2fe" stroke-width="1" stroke-linecap="round"/>
+                <line x1="2.5" y1="7" x2="9.5" y2="7" stroke="#e0f2fe" stroke-width="1" stroke-linecap="round"/>
+                <line x1="2.5" y1="10" x2="6.5" y2="10" stroke="#e0f2fe" stroke-width="1" stroke-linecap="round"/>
+              </g>
+
+              <!-- Cyan Twinkle Sparkles -->
+              <path d="M136,94 Q138,97 141,97 Q138,97 136,100 Q134,97 131,97 Q134,97 136,94 Z" fill="#67e8f9"/>
+            </svg>
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="font-extrabold text-xl tracking-tight text-white group-hover:text-cyan-400 transition-colors">Alfa <span class="text-sky-400">appStore</span></span>
+            </div>
+            <p class="text-[11px] text-slate-400 font-medium">Freeware Trusted Android apps</p>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center gap-8">
+          <a href="#apps" class="text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors">Apps</a>
+          <a href="#install-guide" class="text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors">Installation Guide</a>
+          <a href="#security" class="text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors">Security Commitment</a>
+        </nav>
+
+        <!-- CTA & Mobile Toggle -->
+        <div class="flex items-center gap-3">
+          <a href="#apps" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold bg-gradient-to-r from-sky-500 to-cyan-500 text-slate-950 hover:brightness-110 shadow-md shadow-cyan-500/20 transition-all">
+            <i data-lucide="download-cloud" class="w-4 h-4"></i>
+            <span>Browse Apps</span>
+          </a>
+
+          <!-- Mobile Menu Button -->
+          <button id="mobileMenuBtn" aria-label="Toggle navigation menu" class="md:hidden p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-white hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-sky-500">
+            <i data-lucide="menu" id="menuIcon" class="w-5 h-5"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobileDrawer" class="hidden md:hidden border-b border-slate-800 bg-slate-950/95 px-6 py-5 space-y-4">
+      <a href="#apps" class="mobile-nav-link block text-base font-semibold text-slate-200 hover:text-cyan-400">Featured Apps</a>
+      <a href="#install-guide" class="mobile-nav-link block text-base font-semibold text-slate-200 hover:text-cyan-400">APK Install Steps</a>
+      <a href="#security" class="mobile-nav-link block text-base font-semibold text-slate-200 hover:text-cyan-400">Security Commitment</a>
+      <div class="pt-3 border-t border-slate-800/80">
+        <a href="#apps" class="mobile-nav-link flex items-center justify-center gap-2 w-full py-2.5 rounded-xl text-sm font-bold bg-sky-500 text-slate-950">
+          <i data-lucide="download" class="w-4 h-4"></i> Download Direct APKs
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-grow">
+    <section id="hero" class="relative overflow-hidden pt-12 pb-20 lg:pt-20 lg:pb-28 mesh-gradient">
+      <!-- Ambient Glow Decorators -->
+      <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute top-1/3 left-1/4 w-80 h-80 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center max-w-3xl mx-auto space-y-6">
+          
+          <!-- Badge -->
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/80 border border-slate-700/60 shadow-inner">
+            <span class="flex h-2 w-2 relative">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+            </span>
+            <span class="text-xs font-semibold uppercase tracking-wider text-slate-300">Freeware Portal</span>
+            <span class="text-slate-600">•</span>
+            <span class="text-xs text-cyan-400 font-medium">100% Privacy Focused</span>
+          </div>
+
+          <!-- Main Title -->
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+            Trusted, Privacy-First <br class="hidden sm:inline"/>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-300 to-indigo-400">
+              Android Applications
+            </span>
+          </h1>
+
+          <!-- Subheading -->
+          <p class="text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto font-normal leading-relaxed">
+            Direct, lightning-fast APK releases engineered for efficiency, modern design, and <span class="text-white font-semibold">zero telemetry or data harvesting</span>. Completely offline and in your control.
+          </p>
+
+          <!-- Action Buttons -->
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+            <a href="#apps" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-3.5 rounded-xl font-bold text-slate-950 bg-gradient-to-r from-cyan-400 to-sky-500 hover:from-cyan-300 hover:to-sky-400 transition-all shadow-lg shadow-sky-500/25 hover:shadow-cyan-400/35">
+              <i data-lucide="package-search" class="w-5 h-5"></i>
+              <span>Explore Available Apps</span>
+            </a>
+            <a href="#install-guide" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl font-semibold text-slate-200 bg-slate-900/80 hover:bg-slate-800 border border-slate-700/70 hover:border-slate-600 transition-all">
+              <i data-lucide="help-circle" class="w-5 h-5 text-sky-400"></i>
+              <span>How to Install APKs</span>
+            </a>
+          </div>
+
+          <!-- Trust Badges Grid -->
+          <div class="pt-12 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-4xl mx-auto">
+            <div class="glass-card rounded-2xl p-4 text-center">
+              <div class="w-8 h-8 mx-auto mb-2 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400">
+                <i data-lucide="check-check" class="w-4 h-4"></i>
+              </div>
+              <h4 class="text-sm font-bold text-white">100% Freeware</h4>
+              <p class="text-[11px] text-slate-400 mt-0.5">No paywalls or ads</p>
+            </div>
+
+            <div class="glass-card rounded-2xl p-4 text-center">
+              <div class="w-8 h-8 mx-auto mb-2 rounded-lg bg-cyan-500/10 flex items-center justify-center text-cyan-400">
+                <i data-lucide="shield-off" class="w-4 h-4"></i>
+              </div>
+              <h4 class="text-sm font-bold text-white">Zero Trackers</h4>
+              <p class="text-[11px] text-slate-400 mt-0.5">No data harvesting</p>
+            </div>
+
+            <div class="glass-card rounded-2xl p-4 text-center">
+              <div class="w-8 h-8 mx-auto mb-2 rounded-lg bg-sky-500/10 flex items-center justify-center text-sky-400">
+                <i data-lucide="zap" class="w-4 h-4"></i>
+              </div>
+              <h4 class="text-sm font-bold text-white">Direct APKs</h4>
+              <p class="text-[11px] text-slate-400 mt-0.5">Fast &amp; verified builds</p>
+            </div>
+
+            <div class="glass-card rounded-2xl p-4 text-center">
+              <div class="w-8 h-8 mx-auto mb-2 rounded-lg bg-indigo-500/10 flex items-center justify-center text-indigo-400">
+                <i data-lucide="code-2" class="w-4 h-4"></i>
+              </div>
+              <h4 class="text-sm font-bold text-white">Offline First</h4>
+              <p class="text-[11px] text-slate-400 mt-0.5">Full local control</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="apps" class="py-20 bg-slate-900/40 border-t border-b border-slate-800/80">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+        
+        <!-- Section Title Header -->
+        <div class="text-center max-w-2xl mx-auto">
+          <span class="text-xs uppercase font-bold tracking-widest text-sky-400 bg-sky-950/60 px-3 py-1 rounded-full border border-sky-800/50">Curated Applications</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-3">Featured Independent Releases</h2>
+          <p class="text-slate-400 mt-2 text-sm sm:text-base">Pure functional utilities created for day-to-day wellness and uncompromising data protection.</p>
+        </div>
+
+        <!-- ======================= APP 1: MyHealthMate ======================= -->
+        <article class="glass-card glass-card-hover rounded-3xl p-6 sm:p-8 lg:p-10 relative overflow-hidden border border-slate-800/80 shadow-2xl">
+          <!-- Background Glow Accent -->
+          <div class="absolute -right-20 -top-20 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            
+            <!-- Left Info Column -->
+            <div class="lg:col-span-7 space-y-6">
+              
+              <!-- App Header & Logo -->
+              <div class="flex flex-wrap items-center gap-4 sm:gap-5">
+                <div class="w-20 h-20 rounded-2xl bg-slate-800 border-2 border-emerald-500/30 overflow-hidden shadow-lg flex-shrink-0 flex items-center justify-center relative">
+                  <img 
+                    src="https://raw.githubusercontent.com/satya-git-ai/My-HealthMate/main/app/my_healthmate_logo_1024x1024.png" 
+                    alt="MyHealthMate Logo" 
+                    class="w-full h-full object-cover"
+                    loading="lazy"
+                    onerror="this.onerror=null; this.src='https://placehold.co/200x200/0f172a/34d399?text=HealthMate';"
+                  />
+                </div>
+                <div>
+                  <div class="flex flex-wrap items-center gap-2">
+                    <h3 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">MyHealthMate</h3>
+                    <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Health &amp; Fitness</span>
+                  </div>
+                  <p class="text-slate-400 text-sm mt-1">Smart habit coaching, step tracker &amp; medication companion</p>
+                </div>
+              </div>
+
+              <!-- App Description -->
+              <div class="space-y-3 text-slate-300 text-sm sm:text-base leading-relaxed">
+                <p class="font-semibold text-emerald-300">Stay on track with your daily health &amp; wellness routine effortlessly.</p>
+                <p class="text-slate-400">
+                  Balancing a busy schedule often means essential health habits fall by the wayside. MyHealthMate helps you prioritize your well-being effortlessly with intelligent, on-time reminders and tracking tools.
+                </p>
+              </div>
+
+              <!-- Key Features List -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2">
+                <div class="flex items-start gap-3 p-3 rounded-xl bg-slate-900/60 border border-slate-800/80">
+                  <div class="p-2 rounded-lg bg-emerald-500/10 text-emerald-400 mt-0.5">
+                    <i data-lucide="footprints" class="w-4 h-4"></i>
+                  </div>
+                  <div>
+                    <h5 class="text-xs font-bold text-white uppercase tracking-wider">Step &amp; Distance</h5>
+                    <p class="text-xs text-slate-400">Monitor daily activity &amp; walking progress seamlessly.</p>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-3 p-3 rounded-xl bg-slate-900/60 border border-slate-800/80">
+                  <div class="p-2 rounded-lg bg-sky-500/10 text-sky-400 mt-0.5">
+                    <i data-lucide="droplet" class="w-4 h-4"></i>
+                  </div>
+                  <div>
+                    <h5 class="text-xs font-bold text-white uppercase tracking-wider">Hydration Reminders</h5>
+                    <p class="text-xs text-slate-400">Timely gentle alerts to stay hydrated all day.</p>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-3 p-3 rounded-xl bg-slate-900/60 border border-slate-800/80">
+                  <div class="p-2 rounded-lg bg-indigo-500/10 text-indigo-400 mt-0.5">
+                    <i data-lucide="pill" class="w-4 h-4"></i>
+                  </div>
+                  <div>
+                    <h5 class="text-xs font-bold text-white uppercase tracking-wider">Medication Schedules</h5>
+                    <p class="text-xs text-slate-400">Customized alarms to never miss a scheduled dose.</p>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-3 p-3 rounded-xl bg-slate-900/60 border border-slate-800/80">
+                  <div class="p-2 rounded-lg bg-amber-500/10 text-amber-400 mt-0.5">
+                    <i data-lucide="timer" class="w-4 h-4"></i>
+                  </div>
+                  <div>
+                    <h5 class="text-xs font-bold text-white uppercase tracking-wider">Workout Timer</h5>
+                    <p class="text-xs text-slate-400">Integrated training interval &amp; exercise timer.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Privacy Commitment Highlight -->
+              <div class="p-3.5 rounded-xl bg-slate-900/90 border border-emerald-500/20 flex items-start gap-3">
+                <i data-lucide="shield-check" class="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5"></i>
+                <div class="text-xs text-slate-300">
+                  <strong class="text-white block mb-0.5 font-semibold">Privacy Commitment</strong>
+                  Zero data harvesting. Your activity, health logs, and dose schedules remain stored strictly offline in your phone's sandbox.
+                </div>
+              </div>
+
+              <!-- Download CTA Area -->
+              <div class="flex flex-wrap items-center gap-4 pt-2">
+                <a 
+                  href="https://github.com/satya-git-ai/My-HealthMate/releases/download/MyHealthMate1.0.0v/My.HealthMate.apk" 
+                  class="inline-flex items-center gap-2.5 px-6 py-3 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 text-slate-950 font-bold text-sm hover:brightness-110 shadow-lg shadow-emerald-500/20 transition-all"
+                  download
+                >
+                  <i data-lucide="download" class="w-4 h-4"></i>
+                  <span>Download MyHealthMate APK</span>
+                </a>
+                <span class="text-xs text-slate-400 flex items-center gap-1.5">
+                  <i data-lucide="file-check" class="w-3.5 h-3.5 text-slate-500"></i>
+                  Independent Package • Direct Official Build
+                </span>
+              </div>
+            </div>
+
+            <!-- Right Visual / Screenshot Gallery -->
+            <div class="lg:col-span-5 space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-semibold uppercase tracking-wider text-slate-400">Interface Previews</span>
+                <span class="text-[11px] text-slate-500">Click preview to expand</span>
+              </div>
+
+              <div class="grid grid-cols-3 gap-3">
+                <!-- Screenshot 1 -->
+                <div 
+                  class="group relative rounded-xl overflow-hidden bg-slate-900 border border-slate-800 cursor-pointer aspect-[9/16] shadow-md hover:border-emerald-500/40 transition-all"
+                  onclick="openLightbox('https://raw.githubusercontent.com/satya-git-ai/My-HealthMate/main/steps.streak.png', 'MyHealthMate - Activity Tracking')"
+                >
+                  <img 
+                    src="https://raw.githubusercontent.com/satya-git-ai/My-HealthMate/main/steps.streak.png" 
+                    alt="Steps & Streak Tracking" 
+                    class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                    onerror="this.onerror=null; this.src='https://placehold.co/400x800/0f172a/34d399?text=Steps+Streak';"
+                  />
+                  <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+                    <i data-lucide="maximize-2" class="w-5 h-5 text-white"></i>
+                  </div>
+                  <div class="absolute bottom-0 inset-x-0 p-1.5 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent text-[10px] text-center font-medium text-slate-300">
+                    Steps Streak
+                  </div>
+                </div>
+
+                <!-- Screenshot 2 -->
+                <div 
+                  class="group relative rounded-xl overflow-hidden bg-slate-900 border border-slate-800 cursor-pointer aspect-[9/16] shadow-md hover:border-emerald-500/40 transition-all"
+                  onclick="openLightbox('https://raw.githubusercontent.com/satya-git-ai/My-HealthMate/main/Hydration.png', 'MyHealthMate - Hydration Tracker')"
+                >
+                  <img 
+                    src="https://raw.githubusercontent.com/satya-git-ai/My-HealthMate/main/Hydration.png" 
+                    alt="Hydration Tracker Preview" 
+                    class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                    onerror="this.onerror=null; this.src='https://placehold.co/400x800/0f172a/38bdf8?text=Hydration';"
+                  />
+                  <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+                    <i data-lucide="maximize-2" class="w-5 h-5 text-white"></i>
+                  </div>
+                  <div class="absolute bottom-0 inset-x-0 p-1.5 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent text-[10px] text-center font-medium text-slate-300">
+                    Hydration
+                  </div>
+                </div>
+
+                <!-- Screenshot 3 -->
+                <div 
+                  class="group relative rounded-xl overflow-hidden bg-slate-900 border border-slate-800 cursor-pointer aspect-[9/16] shadow-md hover:border-emerald-500/40 transition-all"
+                  onclick="openLightbox('https://raw.githubusercontent.com/satya-git-ai/My-HealthMate/main/medicine.png', 'MyHealthMate - Medicine Reminders')"
+                >
+                  <img 
+                    src="https://raw.githubusercontent.com/satya-git-ai/My-HealthMate/main/medicine.png" 
+                    alt="Medicine Tracker Preview" 
+                    class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                    onerror="this.onerror=null; this.src='https://placehold.co/400x800/0f172a/818cf8?text=Medicine';"
+                  />
+                  <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+                    <i data-lucide="maximize-2" class="w-5 h-5 text-white"></i>
+                  </div>
+                  <div class="absolute bottom-0 inset-x-0 p-1.5 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent text-[10px] text-center font-medium text-slate-300">
+                    Medicine
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </article>
+
+        <!-- ======================= APP 2: DocPass ======================= -->
+        <article class="glass-card glass-card-hover rounded-3xl p-6 sm:p-8 lg:p-10 relative overflow-hidden border border-slate-800/80 shadow-2xl">
+          <!-- Background Glow Accent -->
+          <div class="absolute -left-20 -top-20 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            
+            <!-- Left Info Column -->
+            <div class="lg:col-span-7 space-y-6">
+              
+              <!-- App Header & Logo -->
+              <div class="flex flex-wrap items-center gap-4 sm:gap-5">
+                <div class="w-20 h-20 rounded-2xl bg-slate-800 border-2 border-cyan-500/30 overflow-hidden shadow-lg flex-shrink-0 flex items-center justify-center relative">
+                  <img 
+                    src="https://raw.githubusercontent.com/satya-git-ai/DocPass-Android/main/app/docpass_logo.png" 
+                    alt="DocPass Logo" 
+                    class="w-full h-full object-cover"
+                    loading="lazy"
+                    onerror="this.onerror=null; this.src='https://placehold.co/200x200/0f172a/38bdf8?text=DocPass';"
+                  />
+                </div>
+                <div>
+                  <div class="flex flex-wrap items-center gap-2">
+                    <h3 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">DocPass</h3>
+                    <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">Personal Security</span>
+                  </div>
+                  <p class="text-slate-400 text-sm mt-1">Encrypted personal vault for documents, IDs &amp; credentials</p>
+                </div>
+              </div>
+
+              <!-- App Description -->
+              <div class="space-y-3 text-slate-300 text-sm sm:text-base leading-relaxed">
+                <p class="font-semibold text-cyan-300">Securely manage your passwords and vital documents in one unified place.</p>
+                <p class="text-slate-400">
+                  Tired of forgotten credentials and misplacing critical files? DocPass provides a unified, encrypted vault designed to keep your most sensitive digital assets safe, organized, and instantly accessible on demand.
+                </p>
+              </div>
+
+              <!-- Key Features List -->
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5 pt-2">
+                <div class="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800/80 flex flex-col justify-between">
+                  <div class="w-8 h-8 rounded-lg bg-cyan-500/10 text-cyan-400 flex items-center justify-center mb-2">
+                    <i data-lucide="file-lock-2" class="w-4 h-4"></i>
+                  </div>
+                  <div>
+                    <h5 class="text-xs font-bold text-white uppercase tracking-wider">Encrypted Vault</h5>
+                    <p class="text-xs text-slate-400 mt-1">Safely store vital certificates, govt IDs &amp; legal records.</p>
+                  </div>
+                </div>
+
+                <div class="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800/80 flex flex-col justify-between">
+                  <div class="w-8 h-8 rounded-lg bg-sky-500/10 text-sky-400 flex items-center justify-center mb-2">
+                    <i data-lucide="key-round" class="w-4 h-4"></i>
+                  </div>
+                  <div>
+                    <h5 class="text-xs font-bold text-white uppercase tracking-wider">Password Manager</h5>
+                    <p class="text-xs text-slate-400 mt-1">Bank, social &amp; email credentials with 1-tap rapid copy.</p>
+                  </div>
+                </div>
+
+                <div class="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800/80 flex flex-col justify-between">
+                  <div class="w-8 h-8 rounded-lg bg-indigo-500/10 text-indigo-400 flex items-center justify-center mb-2">
+                    <i data-lucide="fingerprint" class="w-4 h-4"></i>
+                  </div>
+                  <div>
+                    <h5 class="text-xs font-bold text-white uppercase tracking-wider">Biometrics</h5>
+                    <p class="text-xs text-slate-400 mt-1">Instant unlocking using your device's fingerprint scanner.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Privacy Commitment Highlight -->
+              <div class="p-3.5 rounded-xl bg-slate-900/90 border border-cyan-500/20 flex items-start gap-3">
+                <i data-lucide="lock" class="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5"></i>
+                <div class="text-xs text-slate-300">
+                  <strong class="text-white block mb-0.5 font-semibold">Privacy Commitment</strong>
+                  Zero data harvesting. DocPass stores nothing on third-party cloud servers. Your personal files and credentials stay strictly offline and encrypted on your physical device.
+                </div>
+              </div>
+
+              <!-- Download CTA Area -->
+              <div class="flex flex-wrap items-center gap-4 pt-2">
+                <a 
+                  href="https://github.com/satya-git-ai/DocPass-Android/releases/download/DocPass.apk/DocPass.apk" 
+                  class="inline-flex items-center gap-2.5 px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-400 to-sky-500 text-slate-950 font-bold text-sm hover:brightness-110 shadow-lg shadow-sky-500/20 transition-all"
+                  download
+                >
+                  <i data-lucide="download" class="w-4 h-4"></i>
+                  <span>Download DocPass APK</span>
+                </a>
+                <span class="text-xs text-slate-400 flex items-center gap-1.5">
+                  <i data-lucide="shield" class="w-3.5 h-3.5 text-slate-500"></i>
+                  Encrypted Storage • No Internet Sync Needed
+                </span>
+              </div>
+            </div>
+
+            <!-- Right Visual / Screenshot Gallery -->
+            <div class="lg:col-span-5 space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-semibold uppercase tracking-wider text-slate-400">Interface Previews</span>
+                <span class="text-[11px] text-slate-500">Click preview to expand</span>
+              </div>
+
+              <!-- 4-Screenshot Responsive Grid -->
+              <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-2 gap-3">
+                <!-- Screenshot 1: Dashboard -->
+                <div 
+                  class="group relative rounded-xl overflow-hidden bg-slate-900 border border-slate-800 cursor-pointer aspect-[9/16] shadow-md hover:border-cyan-500/40 transition-all"
+                  onclick="openLightbox('https://raw.githubusercontent.com/satya-git-ai/DocPass-Android/main/app/dashboard.png', 'DocPass - Dashboard')"
+                >
+                  <img 
+                    src="https://raw.githubusercontent.com/satya-git-ai/DocPass-Android/main/app/dashboard.png" 
+                    alt="DocPass Dashboard Preview" 
+                    class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                    onerror="this.onerror=null; this.src='https://placehold.co/400x800/0f172a/38bdf8?text=Dashboard';"
+                  />
+                  <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+                    <i data-lucide="maximize-2" class="w-5 h-5 text-white"></i>
+                  </div>
+                  <div class="absolute bottom-0 inset-x-0 p-1.5 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent text-[10px] text-center font-medium text-slate-300 truncate">
+                    Dashboard
+                  </div>
+                </div>
+
+                <!-- Screenshot 2: Password Vault -->
+                <div 
+                  class="group relative rounded-xl overflow-hidden bg-slate-900 border border-slate-800 cursor-pointer aspect-[9/16] shadow-md hover:border-cyan-500/40 transition-all"
+                  onclick="openLightbox('https://raw.githubusercontent.com/satya-git-ai/DocPass-Android/main/app/pass.vault.png', 'DocPass - Password Vault')"
+                >
+                  <img 
+                    src="https://raw.githubusercontent.com/satya-git-ai/DocPass-Android/main/app/pass.vault.png" 
+                    alt="Password Vault Preview" 
+                    class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                    onerror="this.onerror=null; this.src='https://placehold.co/400x800/0f172a/0284c7?text=Pass+Vault';"
+                  />
+                  <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+                    <i data-lucide="maximize-2" class="w-5 h-5 text-white"></i>
+                  </div>
+                  <div class="absolute bottom-0 inset-x-0 p-1.5 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent text-[10px] text-center font-medium text-slate-300 truncate">
+                    Pass Vault
+                  </div>
+                </div>
+
+                <!-- Screenshot 3: Document Vault -->
+                <div 
+                  class="group relative rounded-xl overflow-hidden bg-slate-900 border border-slate-800 cursor-pointer aspect-[9/16] shadow-md hover:border-cyan-500/40 transition-all"
+                  onclick="openLightbox('https://raw.githubusercontent.com/satya-git-ai/DocPass-Android/main/app/doc.vault.png', 'DocPass - Document Vault')"
+                >
+                  <img 
+                    src="https://raw.githubusercontent.com/satya-git-ai/DocPass-Android/main/app/doc.vault.png" 
+                    alt="Document Vault Preview" 
+                    class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                    onerror="this.onerror=null; this.src='https://placehold.co/400x800/0f172a/6366f1?text=Doc+Vault';"
+                  />
+                  <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+                    <i data-lucide="maximize-2" class="w-5 h-5 text-white"></i>
+                  </div>
+                  <div class="absolute bottom-0 inset-x-0 p-1.5 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent text-[10px] text-center font-medium text-slate-300 truncate">
+                    Doc Vault
+                  </div>
+                </div>
+
+                <!-- Screenshot 4: Settings & Security -->
+                <div 
+                  class="group relative rounded-xl overflow-hidden bg-slate-900 border border-slate-800 cursor-pointer aspect-[9/16] shadow-md hover:border-cyan-500/40 transition-all"
+                  onclick="openLightbox('https://raw.githubusercontent.com/satya-git-ai/DocPass-Android/main/app/settings.png', 'DocPass - Settings & Security')"
+                >
+                  <img 
+                    src="https://raw.githubusercontent.com/satya-git-ai/DocPass-Android/main/app/settings.png" 
+                    alt="Settings & Security Preview" 
+                    class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                    onerror="this.onerror=null; this.src='https://placehold.co/400x800/0f172a/14b8a6?text=Settings';"
+                  />
+                  <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+                    <i data-lucide="maximize-2" class="w-5 h-5 text-white"></i>
+                  </div>
+                  <div class="absolute bottom-0 inset-x-0 p-1.5 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent text-[10px] text-center font-medium text-slate-300 truncate">
+                    Settings
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Direct Installation Guide -->
+    <section id="install-guide" class="py-20 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-2xl mx-auto mb-14">
+          <span class="text-xs uppercase font-bold tracking-widest text-cyan-400 bg-cyan-950/60 px-3 py-1 rounded-full border border-cyan-800/50">Easy Setup</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-3">Installation Guide (Direct Download)</h2>
+          <p class="text-slate-400 mt-2 text-sm sm:text-base">Installing official APK packages directly is straightforward, transparent, and puts you in control.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          
+          <!-- Step 1 -->
+          <div class="glass-card rounded-2xl p-6 border border-slate-800/90 relative">
+            <div class="w-10 h-10 rounded-xl bg-sky-500/10 text-sky-400 font-extrabold flex items-center justify-center text-lg mb-4 border border-sky-500/20">
+              1
+            </div>
+            <h4 class="text-base font-bold text-white mb-2">Visit Alfa AppStore Portal</h4>
+            <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
+              Navigate to the official portal here and select your desired app (<span class="text-slate-200">MyHealthMate</span> or <span class="text-slate-200">DocPass</span>). Tap the official Direct APK button to download.
+            </p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="glass-card rounded-2xl p-6 border border-slate-800/90 relative">
+            <div class="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-400 font-extrabold flex items-center justify-center text-lg mb-4 border border-cyan-500/20">
+              2
+            </div>
+            <h4 class="text-base font-bold text-white mb-2">Enable Unknown Sources</h4>
+            <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
+              If prompted by Android when opening the APK, allow your browser or file manager permission to <span class="text-slate-200">"Install Unknown Apps"</span>. This is standard for apps outside Google Play.
+            </p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="glass-card rounded-2xl p-6 border border-slate-800/90 relative">
+            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 font-extrabold flex items-center justify-center text-lg mb-4 border border-emerald-500/20">
+              3
+            </div>
+            <h4 class="text-base font-bold text-white mb-2">Install &amp; Enjoy Freeware</h4>
+            <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
+              Confirm the install prompt. The application installs locally on your device in seconds, ready to use immediately without ads or tracking.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Security Clarification Notice -->
+        <div class="mt-8 p-5 rounded-2xl bg-slate-900/90 border border-amber-500/30 flex items-start gap-4">
+          <div class="p-2 rounded-xl bg-amber-500/10 text-amber-400 flex-shrink-0">
+            <i data-lucide="alert-triangle" class="w-5 h-5"></i>
+          </div>
+          <div class="text-xs sm:text-sm text-slate-300">
+            <h5 class="font-bold text-white mb-1">Please Note Regarding Google Play:</h5>
+            <p class="text-slate-400 leading-relaxed">
+              These applications are currently distributed as independent APK packages and are not hosted on Google Play. Distributing APK packages directly ensures you receive pure, bloat-free utilities without forced telemetry, ad tracking, or unnecessary permissions.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Privacy & Security Commitment Section -->
+    <section id="security" class="py-16 bg-slate-900/30 border-t border-slate-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="glass-card rounded-3xl p-8 sm:p-12 border border-slate-800">
+          <div class="space-y-6 max-w-4xl mx-auto text-center">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 text-xs font-semibold border border-cyan-500/20 mx-auto">
+              <i data-lucide="heart-handshake" class="w-3.5 h-3.5"></i>
+              <span>The Freeware Promise</span>
+            </div>
+            <h3 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white">
+              Zero Data Harvesting. Sovereign Privacy.
+            </h3>
+            <p class="text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
+              Alfa appStore delivers high quality, reliable Android utility software free from corporate analytics trackers, invasive telemetry, or aggressive monetization.
+            </p>
+            <div class="flex flex-wrap justify-center gap-6 pt-4">
+              <div class="flex items-center gap-2 text-xs font-semibold text-slate-300 bg-slate-900/80 px-4 py-2 rounded-xl border border-slate-800">
+                <i data-lucide="check-circle" class="w-4 h-4 text-cyan-400"></i> No Account Needed
+              </div>
+              <div class="flex items-center gap-2 text-xs font-semibold text-slate-300 bg-slate-900/80 px-4 py-2 rounded-xl border border-slate-800">
+                <i data-lucide="check-circle" class="w-4 h-4 text-cyan-400"></i> No Cloud Sync Leakage
+              </div>
+              <div class="flex items-center gap-2 text-xs font-semibold text-slate-300 bg-slate-900/80 px-4 py-2 rounded-xl border border-slate-800">
+                <i data-lucide="check-circle" class="w-4 h-4 text-cyan-400"></i> Verified Standalone Builds
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-slate-950 border-t border-slate-800/80 py-12 text-slate-400 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        
+        <div class="flex items-center gap-3">
+          <!-- Stylized Polygonal 'A' Arrow Insignia in Footer -->
+          <div class="relative w-10 h-10 flex-shrink-0 flex items-center justify-center">
+            <svg viewBox="0 0 200 200" class="w-full h-full drop-shadow-[0_2px_8px_rgba(6,182,212,0.3)]" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <polygon points="18,166 68,166 84,130 38,130" fill="url(#facetDeepBlue)" />
+              <polygon points="38,130 84,130 100,30" fill="url(#facetCyanTeal)" opacity="0.95" />
+              <polygon points="84,130 100,90 100,30" fill="#0284c7" opacity="0.8" />
+              <polygon points="100,30 105,33 118,72 100,90" fill="#22c55e" opacity="0.9" />
+              <polygon points="100,30 114,48 100,90" fill="url(#facetGreenLime)" />
+              <polygon points="118,166 142,166 128,126 112,126" fill="#093145" />
+              <polygon points="112,126 128,126 138,82" fill="url(#rightWingGrad)" />
+              <path d="M52,142 C70,122 84,104 100,82 C114,64 126,50 138,40 L134,60 L146,42 L144,38 L124,54 L132,54 C120,66 108,80 94,100 C78,122 66,136 52,142 Z" fill="url(#arrowSurge)" />
+              <polygon points="132,46 148,40 144,56" fill="#a3e635" />
+              <g transform="translate(30, 72)">
+                <rect width="24" height="18" rx="5" fill="url(#badgeAppGrad)" stroke="#38bdf8" stroke-width="1"/>
+                <text x="12" y="12.5" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5" font-weight="700" fill="#ffffff" text-anchor="middle">app</text>
+              </g>
+              <circle cx="68" cy="85" r="5" stroke="#67e8f9" stroke-width="1.6" fill="none"/>
+              <line x1="71.5" y1="88.5" x2="75" y2="92" stroke="#67e8f9" stroke-width="1.6" stroke-linecap="round"/>
+              <g transform="translate(130, 108)">
+                <rect width="20" height="18" rx="4" fill="url(#badgeStarGrad)" stroke="#60a5fa" stroke-width="0.8"/>
+                <polygon points="10,4.5 11.5,7.8 15,8.2 12.5,10.6 13.2,14 10,12.2 6.8,14 7.5,10.6 5,8.2 8.5,7.8" fill="#fde047"/>
+              </g>
+              <g transform="translate(126, 134)">
+                <rect x="0" y="0" width="12" height="14" rx="2" fill="#0284c7" opacity="0.9"/>
+                <line x1="2.5" y1="4" x2="9.5" y2="4" stroke="#e0f2fe" stroke-width="1" stroke-linecap="round"/>
+                <line x1="2.5" y1="7" x2="9.5" y2="7" stroke="#e0f2fe" stroke-width="1" stroke-linecap="round"/>
+              </g>
+            </svg>
+          </div>
+          <div>
+            <span class="text-sm font-bold text-white tracking-tight">Alfa appStore</span>
+            <p class="text-[11px] text-slate-400">Freeware Trusted Android apps</p>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap items-center justify-center gap-6 text-slate-400">
+          <a href="#hero" class="hover:text-cyan-400 transition-colors">Home</a>
+          <a href="#apps" class="hover:text-cyan-400 transition-colors">MyHealthMate</a>
+          <a href="#apps" class="hover:text-cyan-400 transition-colors">DocPass</a>
+          <a href="#install-guide" class="hover:text-cyan-400 transition-colors">Install Guide</a>
+          <a href="#security" class="hover:text-cyan-400 transition-colors">Security Commitment</a>
+        </div>
+
+      </div>
+
+      <div class="border-t border-slate-800/70 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left text-[11px] text-slate-400">
+        <p>© 2026 Alfa appStore. Independent Freeware releases. All trademarks belong to their respective owners.</p>
+        <p class="text-slate-400">Direct download verified • Clean offline architecture</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interactive Modal Lightbox for Screenshots -->
+  <div id="imageLightbox" class="fixed inset-0 z-[100] bg-slate-950/90 backdrop-blur-md hidden items-center justify-center p-4 transition-all duration-300">
+    <div class="relative max-w-sm sm:max-w-md w-full bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-2xl p-4">
+      
+      <!-- Close Button -->
+      <button 
+        onclick="closeLightbox()" 
+        aria-label="Close Preview"
+        class="absolute top-4 right-4 p-2 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white transition-all z-10"
+      >
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <!-- Modal Image Title -->
+      <div class="mb-3 pr-10">
+        <h4 id="lightboxTitle" class="text-sm font-bold text-white">App Screenshot</h4>
+        <p class="text-[11px] text-slate-400">Live preview from official repository</p>
+      </div>
+
+      <!-- Image Container -->
+      <div class="w-full flex items-center justify-center rounded-xl bg-slate-950 p-2 overflow-hidden max-h-[70vh]">
+        <img 
+          id="lightboxImage" 
+          src="" 
+          alt="Expanded Screenshot Preview" 
+          class="max-h-[65vh] w-auto object-contain rounded-lg shadow"
+          onerror="this.onerror=null; this.src='https://placehold.co/500x900/0f172a/38bdf8?text=Preview+Unavailable';"
+        />
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Client-side Interactivity Script -->
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // Mobile Drawer Navigation Logic
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileDrawer = document.getElementById('mobileDrawer');
+    const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+    if (mobileMenuBtn && mobileDrawer) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileDrawer.classList.toggle('hidden');
+      });
+
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileDrawer.classList.add('hidden');
+        });
+      });
+    }
+
+    // Screenshot Lightbox Logic
+    const lightbox = document.getElementById('imageLightbox');
+    const lightboxImg = document.getElementById('lightboxImage');
+    const lightboxTitle = document.getElementById('lightboxTitle');
+
+    function openLightbox(url, title) {
+      if (!lightbox || !lightboxImg) return;
+      lightboxImg.src = url;
+      lightboxTitle.textContent = title || 'App Screenshot Preview';
+      lightbox.classList.remove('hidden');
+      lightbox.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      if (!lightbox) return;
+      lightbox.classList.add('hidden');
+      lightbox.classList.remove('flex');
+      document.body.style.overflow = 'auto';
+    }
+
+    // Close on backdrop click or Escape key
+    if (lightbox) {
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+          closeLightbox();
+        }
+      });
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lightbox && !lightbox.classList.contains('hidden')) {
+        closeLightbox();
+      }
+    });
+  </script>
+</body>
+</html>

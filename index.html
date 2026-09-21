@@ -95,114 +95,13 @@
         
         <!-- Logo & Branding -->
         <a href="#hero" class="flex items-center gap-3.5 group focus:outline-none focus:ring-2 focus:ring-sky-500 rounded-xl p-1">
-          <!-- Stylized Polygonal 'A' Arrow Insignia matching attached image -->
           <div class="relative w-12 h-12 flex-shrink-0 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
-            <svg viewBox="0 0 200 200" class="w-full h-full drop-shadow-[0_4px_12px_rgba(6,182,212,0.35)]" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="facetDeepBlue" x1="0%" y1="100%" x2="50%" y2="0%">
-                  <stop offset="0%" stop-color="#0b194d"/>
-                  <stop offset="60%" stop-color="#033d6b"/>
-                  <stop offset="100%" stop-color="#0284c7"/>
-                </linearGradient>
-                <linearGradient id="facetCyanTeal" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#06b6d4"/>
-                  <stop offset="70%" stop-color="#0f766e"/>
-                  <stop offset="100%" stop-color="#042f2e"/>
-                </linearGradient>
-                <linearGradient id="facetGreenLime" x1="0%" y1="100%" x2="100%" y2="0%">
-                  <stop offset="0%" stop-color="#10b981"/>
-                  <stop offset="60%" stop-color="#4ade80"/>
-                  <stop offset="100%" stop-color="#a3e635"/>
-                </linearGradient>
-                <linearGradient id="arrowSurge" x1="10%" y1="90%" x2="90%" y2="10%">
-                  <stop offset="0%" stop-color="#047857"/>
-                  <stop offset="35%" stop-color="#10b981"/>
-                  <stop offset="70%" stop-color="#84cc16"/>
-                  <stop offset="100%" stop-color="#bef264"/>
-                </linearGradient>
-                <linearGradient id="rightWingGrad" x1="100%" y1="100%" x2="40%" y2="20%">
-                  <stop offset="0%" stop-color="#0f2b48"/>
-                  <stop offset="50%" stop-color="#085f63"/>
-                  <stop offset="100%" stop-color="#0284c7"/>
-                </linearGradient>
-                <linearGradient id="badgeAppGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#38bdf8"/>
-                  <stop offset="100%" stop-color="#1e1b4b"/>
-                </linearGradient>
-                <linearGradient id="badgeRocketGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#818cf8"/>
-                  <stop offset="100%" stop-color="#312e81"/>
-                </linearGradient>
-                <linearGradient id="badgeStarGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#38bdf8"/>
-                  <stop offset="100%" stop-color="#1d4ed8"/>
-                </linearGradient>
-              </defs>
-
-              <!-- Left Polygonal Foot & Stem -->
-              <polygon points="18,166 68,166 84,130 38,130" fill="url(#facetDeepBlue)" />
-              <polygon points="38,130 84,130 100,30" fill="url(#facetCyanTeal)" opacity="0.95" />
-              <polygon points="84,130 100,90 100,30" fill="#0284c7" opacity="0.8" />
-
-              <!-- Center Apex & Facets -->
-              <polygon points="100,30 105,33 118,72 100,90" fill="#22c55e" opacity="0.9" />
-              <polygon points="100,30 114,48 100,90" fill="url(#facetGreenLime)" />
-
-              <!-- Right Polygonal Arm & Base Foot -->
-              <polygon points="118,166 142,166 128,126 112,126" fill="#093145" />
-              <polygon points="112,126 128,126 138,82" fill="url(#rightWingGrad)" />
-
-              <!-- Sweeping Dynamic Green-to-Lime Arrow through center -->
-              <path d="M52,142 C70,122 84,104 100,82 C114,64 126,50 138,40 L134,60 L146,42 L144,38 L124,54 L132,54 C120,66 108,80 94,100 C78,122 66,136 52,142 Z" fill="url(#arrowSurge)" />
-              <!-- Arrowhead Triangle -->
-              <polygon points="132,46 148,40 144,56" fill="#a3e635" />
-
-              <!-- Floating UI Badges & Applets -->
-              <!-- 'app' pill badge -->
-              <g transform="translate(30, 72)">
-                <rect width="24" height="18" rx="5" fill="url(#badgeAppGrad)" stroke="#38bdf8" stroke-width="1"/>
-                <text x="12" y="12.5" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5" font-weight="700" fill="#ffffff" text-anchor="middle">app</text>
-              </g>
-
-              <!-- Search Lens -->
-              <circle cx="68" cy="85" r="5" stroke="#67e8f9" stroke-width="1.6" fill="none"/>
-              <line x1="71.5" y1="88.5" x2="75" y2="92" stroke="#67e8f9" stroke-width="1.6" stroke-linecap="round"/>
-
-              <!-- Small Cyan Gear -->
-              <g transform="translate(60, 107)">
-                <circle cx="5" cy="5" r="3" fill="none" stroke="#38bdf8" stroke-width="1.2"/>
-                <circle cx="5" cy="5" r="1.2" fill="#38bdf8"/>
-                <line x1="5" y1="0.5" x2="5" y2="2" stroke="#38bdf8" stroke-width="1.2"/>
-                <line x1="5" y1="8" x2="5" y2="9.5" stroke="#38bdf8" stroke-width="1.2"/>
-                <line x1="0.5" y1="5" x2="2" y2="5" stroke="#38bdf8" stroke-width="1.2"/>
-                <line x1="8" y1="5" x2="9.5" y2="5" stroke="#38bdf8" stroke-width="1.2"/>
-              </g>
-
-              <!-- Mini Rocket Badge Top -->
-              <g transform="translate(112, 46)">
-                <rect width="18" height="16" rx="4" fill="url(#badgeRocketGrad)" stroke="#818cf8" stroke-width="0.8"/>
-                <!-- rocket silhouette -->
-                <path d="M9,4 C11,6 12,9 11,12 L9,10 L7,12 C6,9 7,6 9,4 Z" fill="#ffffff"/>
-              </g>
-
-              <!-- Star Rating Badge -->
-              <g transform="translate(130, 108)">
-                <rect width="20" height="18" rx="4" fill="url(#badgeStarGrad)" stroke="#60a5fa" stroke-width="0.8"/>
-                <!-- Star inside -->
-                <polygon points="10,4.5 11.5,7.8 15,8.2 12.5,10.6 13.2,14 10,12.2 6.8,14 7.5,10.6 5,8.2 8.5,7.8" fill="#fde047"/>
-              </g>
-
-              <!-- Mini Document Vault Icon -->
-              <g transform="translate(126, 134)">
-                <rect x="0" y="0" width="12" height="14" rx="2" fill="#0284c7" opacity="0.9"/>
-                <line x1="2.5" y1="4" x2="9.5" y2="4" stroke="#e0f2fe" stroke-width="1" stroke-linecap="round"/>
-                <line x1="2.5" y1="7" x2="9.5" y2="7" stroke="#e0f2fe" stroke-width="1" stroke-linecap="round"/>
-                <line x1="2.5" y1="10" x2="6.5" y2="10" stroke="#e0f2fe" stroke-width="1" stroke-linecap="round"/>
-              </g>
-
-              <!-- Cyan Twinkle Sparkles -->
-              <path d="M136,94 Q138,97 141,97 Q138,97 136,100 Q134,97 131,97 Q134,97 136,94 Z" fill="#67e8f9"/>
-            </svg>
+            <img 
+              src="https://raw.githubusercontent.com/satya-git-ai/alfa.appstore/main/alfa%20apppstore%20logo.png" 
+              alt="Alfa appStore Logo" 
+              class="w-full h-full object-contain drop-shadow-[0_4px_12px_rgba(6,182,212,0.35)] rounded-xl"
+              onerror="this.onerror=null; this.src='https://placehold.co/120x120/0f172a/38bdf8?text=Alfa';"
+            />
           </div>
           <div>
             <div class="flex items-center gap-2">
@@ -817,34 +716,13 @@
       <div class="flex flex-col md:flex-row items-center justify-between gap-6">
         
         <div class="flex items-center gap-3">
-          <!-- Stylized Polygonal 'A' Arrow Insignia in Footer -->
           <div class="relative w-10 h-10 flex-shrink-0 flex items-center justify-center">
-            <svg viewBox="0 0 200 200" class="w-full h-full drop-shadow-[0_2px_8px_rgba(6,182,212,0.3)]" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <polygon points="18,166 68,166 84,130 38,130" fill="url(#facetDeepBlue)" />
-              <polygon points="38,130 84,130 100,30" fill="url(#facetCyanTeal)" opacity="0.95" />
-              <polygon points="84,130 100,90 100,30" fill="#0284c7" opacity="0.8" />
-              <polygon points="100,30 105,33 118,72 100,90" fill="#22c55e" opacity="0.9" />
-              <polygon points="100,30 114,48 100,90" fill="url(#facetGreenLime)" />
-              <polygon points="118,166 142,166 128,126 112,126" fill="#093145" />
-              <polygon points="112,126 128,126 138,82" fill="url(#rightWingGrad)" />
-              <path d="M52,142 C70,122 84,104 100,82 C114,64 126,50 138,40 L134,60 L146,42 L144,38 L124,54 L132,54 C120,66 108,80 94,100 C78,122 66,136 52,142 Z" fill="url(#arrowSurge)" />
-              <polygon points="132,46 148,40 144,56" fill="#a3e635" />
-              <g transform="translate(30, 72)">
-                <rect width="24" height="18" rx="5" fill="url(#badgeAppGrad)" stroke="#38bdf8" stroke-width="1"/>
-                <text x="12" y="12.5" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5" font-weight="700" fill="#ffffff" text-anchor="middle">app</text>
-              </g>
-              <circle cx="68" cy="85" r="5" stroke="#67e8f9" stroke-width="1.6" fill="none"/>
-              <line x1="71.5" y1="88.5" x2="75" y2="92" stroke="#67e8f9" stroke-width="1.6" stroke-linecap="round"/>
-              <g transform="translate(130, 108)">
-                <rect width="20" height="18" rx="4" fill="url(#badgeStarGrad)" stroke="#60a5fa" stroke-width="0.8"/>
-                <polygon points="10,4.5 11.5,7.8 15,8.2 12.5,10.6 13.2,14 10,12.2 6.8,14 7.5,10.6 5,8.2 8.5,7.8" fill="#fde047"/>
-              </g>
-              <g transform="translate(126, 134)">
-                <rect x="0" y="0" width="12" height="14" rx="2" fill="#0284c7" opacity="0.9"/>
-                <line x1="2.5" y1="4" x2="9.5" y2="4" stroke="#e0f2fe" stroke-width="1" stroke-linecap="round"/>
-                <line x1="2.5" y1="7" x2="9.5" y2="7" stroke="#e0f2fe" stroke-width="1" stroke-linecap="round"/>
-              </g>
-            </svg>
+            <img 
+              src="https://raw.githubusercontent.com/satya-git-ai/alfa.appstore/main/alfa%20apppstore%20logo.png" 
+              alt="Alfa appStore Logo" 
+              class="w-full h-full object-contain rounded-lg drop-shadow-[0_2px_8px_rgba(6,182,212,0.3)]"
+              onerror="this.onerror=null; this.src='https://placehold.co/80x80/0f172a/38bdf8?text=Alfa';"
+            />
           </div>
           <div>
             <span class="text-sm font-bold text-white tracking-tight">Alfa appStore</span>

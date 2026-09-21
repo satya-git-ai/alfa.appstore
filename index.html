@@ -93,11 +93,11 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-20">
         
-        <!-- Logo & Branding -->
+        <!-- Logo & Branding (TOP) -->
         <a href="#hero" class="flex items-center gap-3.5 group focus:outline-none focus:ring-2 focus:ring-sky-500 rounded-xl p-1">
           <div class="relative w-12 h-12 flex-shrink-0 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
             <img 
-              src="https://raw.githubusercontent.com/satya-git-ai/alfa.appstore/main/alfa%20apppstore%20logo.png" 
+              src="https://raw.githubusercontent.com/satya-git-ai/alfa.appstore/main/alfa-logo.png" 
               alt="Alfa appStore Logo" 
               class="w-full h-full object-contain drop-shadow-[0_4px_12px_rgba(6,182,212,0.35)] rounded-xl"
               onerror="this.onerror=null; this.src='https://placehold.co/120x120/0f172a/38bdf8?text=Alfa';"
@@ -669,10 +669,11 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
       <div class="flex flex-col md:flex-row items-center justify-between gap-6">
         
+        <!-- Logo & Branding (BOTTOM) -->
         <div class="flex items-center gap-3">
           <div class="relative w-10 h-10 flex-shrink-0 flex items-center justify-center">
             <img 
-              src="https://raw.githubusercontent.com/satya-git-ai/alfa.appstore/main/alfa%20apppstore%20logo.png" 
+              src="https://raw.githubusercontent.com/satya-git-ai/alfa.appstore/main/alfa-logo.png" 
               alt="Alfa appStore Logo" 
               class="w-full h-full object-contain rounded-lg drop-shadow-[0_2px_8px_rgba(6,182,212,0.3)]"
               onerror="this.onerror=null; this.src='https://placehold.co/80x80/0f172a/38bdf8?text=Alfa';"
@@ -744,7 +745,6 @@
       <div class="block sm:hidden mt-6 space-y-3 text-left">
         <p class="text-xs font-semibold text-slate-300 uppercase tracking-wider text-center">Tap to open UPI app:</p>
         <div class="grid grid-cols-2 gap-2.5">
-          <!-- Generic UPI Handler (opens default UPI chooser like GPay / PhonePe) -->
           <a 
             href="upi://pay?pa=alfapps@axl&pn=Alfa%20appStore&cu=INR" 
             class="flex items-center justify-center gap-2 p-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white text-xs font-semibold border border-slate-700 transition-all text-center col-span-2 shadow-sm"
@@ -778,7 +778,7 @@
         </div>
       </div>
 
-      <!-- UPI ID Copy Box (Accessible for both desktop & mobile) -->
+      <!-- UPI ID Copy Box -->
       <div class="mt-5 pt-4 border-t border-slate-800 flex items-center justify-between p-2.5 rounded-xl bg-slate-950/80 border border-slate-800 text-left">
         <div>
           <span class="text-[10px] text-slate-500 uppercase tracking-wider font-semibold block">UPI ID</span>
@@ -881,7 +881,6 @@
       tipModal.classList.remove('hidden');
       tipModal.classList.add('flex');
       document.body.style.overflow = 'hidden';
-      // Re-trigger icon creation for dynamic elements
       lucide.createIcons();
     }
 

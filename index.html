@@ -115,7 +115,10 @@
         <nav class="hidden md:flex items-center gap-8">
           <a href="#apps" class="text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors">Apps</a>
           <a href="#install-guide" class="text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors">Installation Guide</a>
-          <a href="#security" class="text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors">Security Commitment</a>
+          <button onclick="openTipModal()" class="inline-flex items-center gap-1.5 text-sm font-semibold text-amber-400 hover:text-amber-300 transition-colors cursor-pointer">
+            <i data-lucide="coffee" class="w-4 h-4"></i>
+            <span>Give Tip</span>
+          </button>
         </nav>
 
         <!-- CTA & Mobile Toggle -->
@@ -137,7 +140,9 @@
     <div id="mobileDrawer" class="hidden md:hidden border-b border-slate-800 bg-slate-950/95 px-6 py-5 space-y-4">
       <a href="#apps" class="mobile-nav-link block text-base font-semibold text-slate-200 hover:text-cyan-400">Featured Apps</a>
       <a href="#install-guide" class="mobile-nav-link block text-base font-semibold text-slate-200 hover:text-cyan-400">APK Install Steps</a>
-      <a href="#security" class="mobile-nav-link block text-base font-semibold text-slate-200 hover:text-cyan-400">Security Commitment</a>
+      <button onclick="openTipModal(); document.getElementById('mobileDrawer').classList.add('hidden');" class="flex items-center gap-2 w-full text-left text-base font-semibold text-amber-400 hover:text-amber-300">
+        <i data-lucide="coffee" class="w-4 h-4"></i> Give Tip (UPI)
+      </button>
       <div class="pt-3 border-t border-slate-800/80">
         <a href="#apps" class="mobile-nav-link flex items-center justify-center gap-2 w-full py-2.5 rounded-xl text-sm font-bold bg-sky-500 text-slate-950">
           <i data-lucide="download" class="w-4 h-4"></i> Download Direct APKs
@@ -185,10 +190,10 @@
               <i data-lucide="package-search" class="w-5 h-5"></i>
               <span>Explore Available Apps</span>
             </a>
-            <a href="#install-guide" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl font-semibold text-slate-200 bg-slate-900/80 hover:bg-slate-800 border border-slate-700/70 hover:border-slate-600 transition-all">
-              <i data-lucide="help-circle" class="w-5 h-5 text-sky-400"></i>
-              <span>How to Install APKs</span>
-            </a>
+            <button onclick="openTipModal()" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl font-semibold text-amber-300 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 hover:border-amber-400/50 transition-all">
+              <i data-lucide="coffee" class="w-5 h-5 text-amber-400"></i>
+              <span>Support via Tip</span>
+            </button>
           </div>
 
           <!-- Trust Badges Grid -->
@@ -242,7 +247,6 @@
 
         <!-- ======================= APP 1: MyHealthMate ======================= -->
         <article class="glass-card glass-card-hover rounded-3xl p-6 sm:p-8 lg:p-10 relative overflow-hidden border border-slate-800/80 shadow-2xl">
-          <!-- Background Glow Accent -->
           <div class="absolute -right-20 -top-20 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
@@ -318,15 +322,6 @@
                     <h5 class="text-xs font-bold text-white uppercase tracking-wider">Workout Timer</h5>
                     <p class="text-xs text-slate-400">Integrated training interval &amp; exercise timer.</p>
                   </div>
-                </div>
-              </div>
-
-              <!-- Privacy Commitment Highlight -->
-              <div class="p-3.5 rounded-xl bg-slate-900/90 border border-emerald-500/20 flex items-start gap-3">
-                <i data-lucide="shield-check" class="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5"></i>
-                <div class="text-xs text-slate-300">
-                  <strong class="text-white block mb-0.5 font-semibold">Privacy Commitment</strong>
-                  Zero data harvesting. Your activity, health logs, and dose schedules remain stored strictly offline in your phone's sandbox.
                 </div>
               </div>
 
@@ -422,7 +417,6 @@
 
         <!-- ======================= APP 2: DocPass ======================= -->
         <article class="glass-card glass-card-hover rounded-3xl p-6 sm:p-8 lg:p-10 relative overflow-hidden border border-slate-800/80 shadow-2xl">
-          <!-- Background Glow Accent -->
           <div class="absolute -left-20 -top-20 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
@@ -488,15 +482,6 @@
                     <h5 class="text-xs font-bold text-white uppercase tracking-wider">Biometrics</h5>
                     <p class="text-xs text-slate-400 mt-1">Instant unlocking using your device's fingerprint scanner.</p>
                   </div>
-                </div>
-              </div>
-
-              <!-- Privacy Commitment Highlight -->
-              <div class="p-3.5 rounded-xl bg-slate-900/90 border border-cyan-500/20 flex items-start gap-3">
-                <i data-lucide="lock" class="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5"></i>
-                <div class="text-xs text-slate-300">
-                  <strong class="text-white block mb-0.5 font-semibold">Privacy Commitment</strong>
-                  Zero data harvesting. DocPass stores nothing on third-party cloud servers. Your personal files and credentials stay strictly offline and encrypted on your physical device.
                 </div>
               </div>
 
@@ -677,37 +662,6 @@
       </div>
     </section>
 
-    <!-- Privacy & Security Commitment Section -->
-    <section id="security" class="py-16 bg-slate-900/30 border-t border-slate-800">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="glass-card rounded-3xl p-8 sm:p-12 border border-slate-800">
-          <div class="space-y-6 max-w-4xl mx-auto text-center">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 text-xs font-semibold border border-cyan-500/20 mx-auto">
-              <i data-lucide="heart-handshake" class="w-3.5 h-3.5"></i>
-              <span>The Freeware Promise</span>
-            </div>
-            <h3 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white">
-              Zero Data Harvesting. Sovereign Privacy.
-            </h3>
-            <p class="text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
-              Alfa appStore delivers high quality, reliable Android utility software free from corporate analytics trackers, invasive telemetry, or aggressive monetization.
-            </p>
-            <div class="flex flex-wrap justify-center gap-6 pt-4">
-              <div class="flex items-center gap-2 text-xs font-semibold text-slate-300 bg-slate-900/80 px-4 py-2 rounded-xl border border-slate-800">
-                <i data-lucide="check-circle" class="w-4 h-4 text-cyan-400"></i> No Account Needed
-              </div>
-              <div class="flex items-center gap-2 text-xs font-semibold text-slate-300 bg-slate-900/80 px-4 py-2 rounded-xl border border-slate-800">
-                <i data-lucide="check-circle" class="w-4 h-4 text-cyan-400"></i> No Cloud Sync Leakage
-              </div>
-              <div class="flex items-center gap-2 text-xs font-semibold text-slate-300 bg-slate-900/80 px-4 py-2 rounded-xl border border-slate-800">
-                <i data-lucide="check-circle" class="w-4 h-4 text-cyan-400"></i> Verified Standalone Builds
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
   </main>
 
   <!-- Footer -->
@@ -735,7 +689,9 @@
           <a href="#apps" class="hover:text-cyan-400 transition-colors">MyHealthMate</a>
           <a href="#apps" class="hover:text-cyan-400 transition-colors">DocPass</a>
           <a href="#install-guide" class="hover:text-cyan-400 transition-colors">Install Guide</a>
-          <a href="#security" class="hover:text-cyan-400 transition-colors">Security Commitment</a>
+          <button onclick="openTipModal()" class="inline-flex items-center gap-1.5 text-amber-400 hover:text-amber-300 transition-colors">
+            <i data-lucide="coffee" class="w-3.5 h-3.5"></i> Give Tip
+          </button>
         </div>
 
       </div>
@@ -746,6 +702,100 @@
       </div>
     </div>
   </footer>
+
+  <!-- ======================= GIVE TIP / PAYMENT SCANNER MODAL ======================= -->
+  <div id="tipModal" class="fixed inset-0 z-[110] bg-slate-950/85 backdrop-blur-md hidden items-center justify-center p-4 transition-all duration-300">
+    <div class="relative max-w-sm sm:max-w-md w-full bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden shadow-2xl p-6 text-center">
+      
+      <!-- Close Button -->
+      <button 
+        onclick="closeTipModal()" 
+        aria-label="Close Tip Modal"
+        class="absolute top-4 right-4 p-2 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white transition-all z-10"
+      >
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <!-- Modal Header -->
+      <div class="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-amber-500/10 text-amber-400 mb-3 border border-amber-500/20">
+        <i data-lucide="coffee" class="w-6 h-6"></i>
+      </div>
+      <h3 class="text-xl font-bold text-white">Support Alfa appStore</h3>
+      <p class="text-xs text-slate-400 mt-1 max-w-xs mx-auto">
+        If you enjoy our free, tracker-free utilities, consider sending a small tip to keep development independent!
+      </p>
+
+      <!-- 1. DESKTOP/WEBSITE VIEW: QR CODE SCANNER -->
+      <div class="hidden sm:block mt-6">
+        <div class="p-4 bg-white rounded-2xl inline-block shadow-lg">
+          <!-- Live Generated UPI QR Code for alfapps@axl -->
+          <img 
+            src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=upi%3A%2F%2Fpay%3Fpa%3Dalfapps%40axl%26pn%3DAlfa%2520appStore%26cu%3DINR" 
+            alt="Scan UPI QR Code to Tip" 
+            class="w-44 h-44 mx-auto rounded-lg"
+          />
+        </div>
+        <p class="text-xs text-slate-400 mt-2.5 flex items-center justify-center gap-1.5">
+          <i data-lucide="scan-line" class="w-3.5 h-3.5 text-cyan-400"></i> Scan with any UPI app (GPay, PhonePe, Paytm)
+        </p>
+      </div>
+
+      <!-- 2. MOBILE VIEW: DIRECT UPI APP DEEP LINKS -->
+      <div class="block sm:hidden mt-6 space-y-3 text-left">
+        <p class="text-xs font-semibold text-slate-300 uppercase tracking-wider text-center">Tap to open UPI app:</p>
+        <div class="grid grid-cols-2 gap-2.5">
+          <!-- Generic UPI Handler (opens default UPI chooser like GPay / PhonePe) -->
+          <a 
+            href="upi://pay?pa=alfapps@axl&pn=Alfa%20appStore&cu=INR" 
+            class="flex items-center justify-center gap-2 p-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white text-xs font-semibold border border-slate-700 transition-all text-center col-span-2 shadow-sm"
+          >
+            <i data-lucide="smartphone" class="w-4 h-4 text-emerald-400"></i> Open Installed UPI App
+          </a>
+          <a 
+            href="tez://upi/pay?pa=alfapps@axl&pn=Alfa%20appStore&cu=INR" 
+            class="flex items-center justify-center gap-2 p-2.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-200 text-xs font-medium border border-slate-700/80 transition-all"
+          >
+            <i data-lucide="zap" class="w-3.5 h-3.5 text-sky-400"></i> Google Pay
+          </a>
+          <a 
+            href="phonepe://pay?pa=alfapps@axl&pn=Alfa%20appStore&cu=INR" 
+            class="flex items-center justify-center gap-2 p-2.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-200 text-xs font-medium border border-slate-700/80 transition-all"
+          >
+            <i data-lucide="send" class="w-3.5 h-3.5 text-purple-400"></i> PhonePe
+          </a>
+          <a 
+            href="paytmmp://pay?pa=alfapps@axl&pn=Alfa%20appStore&cu=INR" 
+            class="flex items-center justify-center gap-2 p-2.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-200 text-xs font-medium border border-slate-700/80 transition-all"
+          >
+            <i data-lucide="wallet" class="w-3.5 h-3.5 text-cyan-400"></i> Paytm
+          </a>
+          <a 
+            href="bhim://pay?pa=alfapps@axl&pn=Alfa%20appStore&cu=INR" 
+            class="flex items-center justify-center gap-2 p-2.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-200 text-xs font-medium border border-slate-700/80 transition-all"
+          >
+            <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-teal-400"></i> BHIM UPI
+          </a>
+        </div>
+      </div>
+
+      <!-- UPI ID Copy Box (Accessible for both desktop & mobile) -->
+      <div class="mt-5 pt-4 border-t border-slate-800 flex items-center justify-between p-2.5 rounded-xl bg-slate-950/80 border border-slate-800 text-left">
+        <div>
+          <span class="text-[10px] text-slate-500 uppercase tracking-wider font-semibold block">UPI ID</span>
+          <span id="upiText" class="text-xs font-mono font-bold text-sky-300 select-all">alfapps@axl</span>
+        </div>
+        <button 
+          id="copyUpiBtn" 
+          onclick="copyUpiId()" 
+          class="flex items-center gap-1 text-xs px-2.5 py-1.5 rounded-lg bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 font-semibold border border-sky-500/30 transition-all"
+        >
+          <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+          <span id="copyBtnText">Copy</span>
+        </button>
+      </div>
+
+    </div>
+  </div>
 
   <!-- Interactive Modal Lightbox for Screenshots -->
   <div id="imageLightbox" class="fixed inset-0 z-[100] bg-slate-950/90 backdrop-blur-md hidden items-center justify-center p-4 transition-all duration-300">
@@ -823,6 +873,38 @@
       document.body.style.overflow = 'auto';
     }
 
+    // Tip Modal Logic
+    const tipModal = document.getElementById('tipModal');
+
+    function openTipModal() {
+      if (!tipModal) return;
+      tipModal.classList.remove('hidden');
+      tipModal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+      // Re-trigger icon creation for dynamic elements
+      lucide.createIcons();
+    }
+
+    function closeTipModal() {
+      if (!tipModal) return;
+      tipModal.classList.add('hidden');
+      tipModal.classList.remove('flex');
+      document.body.style.overflow = 'auto';
+    }
+
+    function copyUpiId() {
+      const upi = "alfapps@axl";
+      navigator.clipboard.writeText(upi).then(() => {
+        const btnText = document.getElementById('copyBtnText');
+        if (btnText) {
+          btnText.textContent = "Copied!";
+          setTimeout(() => {
+            btnText.textContent = "Copy";
+          }, 2000);
+        }
+      });
+    }
+
     // Close on backdrop click or Escape key
     if (lightbox) {
       lightbox.addEventListener('click', (e) => {
@@ -832,9 +914,18 @@
       });
     }
 
+    if (tipModal) {
+      tipModal.addEventListener('click', (e) => {
+        if (e.target === tipModal) {
+          closeTipModal();
+        }
+      });
+    }
+
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && lightbox && !lightbox.classList.contains('hidden')) {
-        closeLightbox();
+      if (e.key === 'Escape') {
+        if (lightbox && !lightbox.classList.contains('hidden')) closeLightbox();
+        if (tipModal && !tipModal.classList.contains('hidden')) closeTipModal();
       }
     });
   </script>
